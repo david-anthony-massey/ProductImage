@@ -5,5 +5,5 @@ module.exports = {
   // if you are using the paring stations, the password is `student`
   // if you do not have a password, delete this key/value pair from
   // the object
-  database: 'minteger'
+  database: 'FECImages'
 };

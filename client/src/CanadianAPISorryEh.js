@@ -1,4 +1,4 @@
-const CanadianAPISorryEh = [
+const data = [
 
     {
     productId: 1,
@@ -729,5 +729,4 @@ const CanadianAPISorryEh = [
 
 ]
 
-
-
+module.exports = data;

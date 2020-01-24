@@ -3,38 +3,18 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const getAllTransactions = function(callback) {
-  connection.query(`Select * from transactions`, (err, data) => {
+const getImage = function(prodId, callback) {
+  connection.query(`Select imgUrl from imageUrls where ProductId = ${prodId}`, (err, data) => {
     if (err) {
-      throw err;
+      console.error('database get');
     } else {
       callback(null, data);
     }
   })
 };
 
-const getAllCategories = function(callback) {
-  connection.query(`Select * from categories`, (err, data) => {
-    if (err) {
-      throw err;
-    } else {
-      callback(null, data);
-    }
-  })
-};
-
-const addACat = function(cat, budg, callback) {
-  connection.query(`Insert ignore into categories (category, budget) values ('${cat}', '${budg}')`, (err, data) => {
-    if (err) {
-      throw err;
-    } else {
-      callback(null, data);
-    }
-  })
-};
-
-const getACat = function(cat, callback) {
-  connection.query(`Select * from transactions inner join categories on category_id = categories.id where category = '${cat}'`, (err, data) => {
+const addTo = function(id, url, callback) {
+  connection.query(`Insert into imageUrls (productId, imgUrl) values ('${id}', '${url}')`, (err, data) => {
     if (err) {
       throw err;
     } else {
@@ -44,8 +24,6 @@ const getACat = function(cat, callback) {
 };
 
 module.exports = {
-  getAllTransactions,
-  getAllCategories,
-  addACat,
-  getACat
+  addTo,
+  getImage
 };
