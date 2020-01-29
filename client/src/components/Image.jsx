@@ -1,8 +1,11 @@
 import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
+import FullImage from './FullImage.jsx';
 
-const Image = ({images, currentPhoto, id, hoverIt}) => {
-
+const Image = ({images, currentPhoto, id, hoverIt, hover}) => {
+  function hoverText(){
+    return (hover ? <><br /><text>Click image to open expanded view</text></> : <><br /><text>Roll over image to zoom in</text></>);
+  }
   return (
     <div className="prodImage">
       <div className="fullImage">
@@ -13,7 +16,12 @@ const Image = ({images, currentPhoto, id, hoverIt}) => {
         })
         }
         </div>
-        <img className="prodImage" src={currentPhoto} />
+        <FullImage 
+          className="prodImage" 
+          src={currentPhoto ? currentPhoto : images.imgUrls[0]} 
+          hover={hover} 
+          hoverText={hoverText()}
+          />
       </div>
     </div>
   );
