@@ -1,16 +1,18 @@
 import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
 
-const Image = ({image}) => {
+const Image = ({images, id}) => {
   return (
     <div className="prodImage">
       <div className="fullImage">
         <div className="thumbnailsDiv">
         {/*map over thumbnails*/
-        <Thumbnail image={image} />
+        images.imgUrls.map((url, index)=> {
+          return <Thumbnail key={id,index} image={url} />
+        })
         }
         </div>
-        <img className="prodImage" src={image} width="400px"/>
+        <img className="prodImage" src={images.imgUrls[0]} width="400px"/>
       </div>
     </div>
   );

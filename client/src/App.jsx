@@ -9,7 +9,8 @@ class App extends React.Component {
   
     this.state = {
       currentPhoto: '',
-      productId: 1
+      productUrls: [],
+      productId: 2
     }
 
     this.hoverChoose = this.hoverChoose.bind(this);
@@ -65,7 +66,9 @@ class App extends React.Component {
     return (
       <div>
         <div className="prodImg">
-          <Image image={data[this.state.productId].imgUrls[0]} />
+          <Image 
+            images={data[this.state.productId]} 
+            id={this.state.productId}/>
         </div>
     </div>
     );
