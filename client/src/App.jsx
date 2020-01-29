@@ -64,10 +64,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="app">
-          <Image/>
-          <h1>{data[this.state.productId].productName}</h1>
-          <img className="img" src={data[0].imgUrls[0]} />
+        <div className="prodImg">
+          <Image image={data[this.state.productId].imgUrls[0]} />
         </div>
     </div>
     );

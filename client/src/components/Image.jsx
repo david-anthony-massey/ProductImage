@@ -1,17 +1,16 @@
 import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
 
-const Image = ({categories, addCat, newCat, catPlace, budget, setBudget}) => {
+const Image = ({image}) => {
   return (
     <div className="prodImage">
       <div className="fullImage">
-        <h2>[full image]</h2>
-      </div>
-      <div className="thumbnails">
+        <div className="thumbnailsDiv">
         {/*map over thumbnails*/
-        
-        <Thumbnail />
+        <Thumbnail image={image} />
         }
+        </div>
+        <img className="prodImage" src={image} width="400px"/>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Thumbnail = () => {
+const Thumbnail = ({image}) => {
   return (
     <>
-      <h3>[Image thumbnail]</h3>
+      <img className="thumbnail" src={image} width="50px"/>
     </>
   );
 };
