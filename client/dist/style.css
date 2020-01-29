@@ -3,19 +3,23 @@
 .thumbnailsDiv {
   width: 15%;
   align-content: left;
+  margin-right: 10px;
 }
 .thumbnail {
+  /* position: relative; */
+  /* padding: 100%; */
   border-width: 1px;
   border-color: lightgrey;
   border-style: solid;
-  width: 40px;
-  height: 40px;
   border-radius: 3px;
+  max-width: 40px;
+  max-height: 40px;
+  /* box-sizing: padding-box; */
 }
 
 .thumbnail:hover {
   border-width: 1px;
-  border-color: #e77502;
+  border-color: #e77502b9;
   border-style: solid;
   border-radius: 3px;
   box-shadow: 0px 0px 5px #e77502;
@@ -24,6 +28,7 @@
 .fullImage {
   display: flex;
   align-content: right;
+  
 }
 
 .prodImage {
@@ -31,6 +36,8 @@
   align-content: right;
   flex-flow: column nowrap;
   /* flex: 1 1 auto; */
+  height: auto !important;
+  width: auto !important;
   max-width: 296px;
   max-height: 296px;
 }
