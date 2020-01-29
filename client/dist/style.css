@@ -37,5 +37,6 @@
   margin: 0.5rem;
   line-height: 1.5;
   flex: 1 1 auto;
+  max-width: 300px;
 }
 

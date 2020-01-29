@@ -9,11 +9,11 @@ const Image = ({images, id, hoverIt}) => {
         <div className="thumbnailsDiv">
         {/*map over thumbnails*/
         images.imgUrls.map((url, index)=> {
-          return <Thumbnail key={id,index} image={url} hoverIt={hoverIt}/>
+          return <Thumbnail key={id,index} i={index} image={url} hoverIt={hoverIt}/>
         })
         }
         </div>
-        <img className="prodImage" src={images.imgUrls[0]} width="400px"/>
+        <img className="prodImage" src={images.imgUrls[0]} />
       </div>
     </div>
   );
