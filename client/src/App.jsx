@@ -30,11 +30,13 @@ class App extends React.Component {
 
   hoverChoose(event) {
     //onHover choose current image to show
+    console.log(event.target.src)
     event.preventDefault();
     this.setState({
-      currentPhoto: event.target.value,
+      currentPhoto: event.target.src,
       hover: !this.state.hover
     })
+
   }
 
   clickIt(event) {
@@ -71,6 +73,7 @@ class App extends React.Component {
           <Image 
             images={data[this.state.productId]} 
             id={this.state.productId}
+            currentPhoto={this.state.currentPhoto}
             hoverIt={this.hoverChoose}/>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
 
-const Image = ({images, id, hoverIt}) => {
+const Image = ({images, currentPhoto, id, hoverIt}) => {
 
   return (
     <div className="prodImage">
@@ -13,7 +13,7 @@ const Image = ({images, id, hoverIt}) => {
         })
         }
         </div>
-        <img className="prodImage" src={images.imgUrls[0]} />
+        <img className="prodImage" src={currentPhoto} />
       </div>
     </div>
   );
