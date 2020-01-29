@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       currentPhoto: '',
       productUrls: [],
-      productId: 2
+      productId: 2,
+      hover: false
     }
 
     this.hoverChoose = this.hoverChoose.bind(this);
@@ -31,7 +32,8 @@ class App extends React.Component {
     //onHover choose current image to show
     event.preventDefault();
     this.setState({
-      currentPhoto: event.target.value
+      currentPhoto: event.target.value,
+      hover: !this.state.hover
     })
   }
 
@@ -39,7 +41,7 @@ class App extends React.Component {
     //onclick open gallery view
   }
 
-  hoverZoon(event) {
+  hoverZoom(event) {
     //onHover zoom into image
   }
 
@@ -68,7 +70,8 @@ class App extends React.Component {
         <div className="prodImg">
           <Image 
             images={data[this.state.productId]} 
-            id={this.state.productId}/>
+            id={this.state.productId}
+            hoverIt={this.hoverChoose}/>
         </div>
     </div>
     );

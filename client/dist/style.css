@@ -6,8 +6,22 @@
   align-content: left;
 }
 .thumbnail {
-  border-color: black;
-  border-width: 10px;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-style: solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+.thumbnail:hover {
+  border-width: 1px;
+  border-color: orangered;
+  border-style: solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px orange;
 }
 
 .fullImage {

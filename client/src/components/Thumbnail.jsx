@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Thumbnail = ({image}) => {
+const Thumbnail = ({image, hoverIt}) => {
+
   return (
     <>
-      <img className="thumbnail" src={image} width="50px"/>
+      <br></br>
+      <img className="thumbnail" src={image} 
+        onMouseEnter={hoverIt}
+        onMouseLeave={hoverIt}/>
     </>
   );
 };
