@@ -22,12 +22,12 @@ h1 {
   margin: 20px;
 }
 
-.category {
+.thumbnails {
   width: 20%;
   margin: 20px;
 }
 
-.txn-table {
+.prodImage {
   display: flex;
   flex-flow: column nowrap;
   font-size: .8rem;

@@ -12,15 +12,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/images', (req, res) => {
-  db.getImage((err, data) => {
-    if (err) console.error('server get');
+  db.getImage(req.body.productId, (err, data) => {
+    if (err) console.error('server get error');
     res.send(data);
   })
 });
 
 app.post('/images', (req, res) => {
   db.addTo(req.body.productId, req.body.imgUrls, (err, data) => {
-    if (err) throw err;
+    if (err) console.error('server post error');
     res.send(data);
   })
 });

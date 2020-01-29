@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import data from './CanadianAPISorryEh.js';
-import Categories from './components/Categories.jsx';
+import Image from './components/Image.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class App extends React.Component {
     axios.get('http://localhost:3000/images', this.state.productId)
     .then((response) => {
       this.setState({
-        productId: response.data.productId
+        currentPhoto: response.data.imgUrl
       })
     })
     .catch((err) => {console.error('no soup for you')});
@@ -37,7 +37,6 @@ class App extends React.Component {
   clickIt(event) {
     //onclick open gallery view
   }
-
 
   hoverZoon(event) {
     //onHover zoom into image
@@ -65,9 +64,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>BoilerPlate</h1>
         <div className="app">
-          <Categories/>
+          <Image/>
+          <h1>{data[this.state.productId].productName}</h1>
+          <img className="img" src={data[0].imgUrls[0]} />
         </div>
     </div>
     );
