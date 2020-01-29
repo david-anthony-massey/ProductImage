@@ -11,10 +11,12 @@ class App extends React.Component {
       currentPhoto: '',
       productUrls: [],
       productId: 2,
-      hover: false
+      hover: false,
+      hoverMain: false
     }
 
     this.hoverChoose = this.hoverChoose.bind(this);
+    this.fullHover = this.fullHover.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +37,14 @@ class App extends React.Component {
       currentPhoto: event.target.src,
       hover: !this.state.hover
     })
+  }
 
+  fullHover(event) {
+    //onHover change text beneath full image
+    event.preventDefault();
+    this.setState({
+      hoverMain: !this.state.hoverMain
+    })
   }
 
   clickIt(event) {
@@ -73,8 +82,11 @@ class App extends React.Component {
             images={data[this.state.productId]} 
             id={this.state.productId}
             currentPhoto={this.state.currentPhoto}
-            hoverIt={this.hoverChoose}
+            hoverChoose={this.hoverChoose}
             hover={this.state.hover}
+            hoverMain={this.state.hoverMain}
+            fullHover={this.fullHover}
+
             />
         </div>
     </div>
