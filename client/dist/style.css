@@ -4,19 +4,16 @@
   width: 15%;
   align-content: left;
   margin-right: 10px;
+  margin-left: 5px;
 }
 .thumbnail {
-  /* position: relative; */
-  /* padding: 100%; */
   border-width: 1px;
   border-color: lightgrey;
   border-style: solid;
   border-radius: 3px;
   width: 40px;
   height: 40px;
-  object-fit: cover;
-  /* overflow: hidden; */
-  /* box-sizing: padding-box; */
+  object-fit: contain;
 }
 
 .thumbnail:hover {
@@ -37,15 +34,10 @@
   display: flex;
   align-content: right;
   flex-flow: column nowrap;
-  /* flex: 1 1 auto; */
-  /* height: auto !important;
-  width: auto !important; */
   width: 90%;
   max-width: 296px;
   max-height: 296px;
   object-fit: contain;
-  /* overflow: hidden; */
-  /* -o-object-fit: contain; */
 }
 
 text {
