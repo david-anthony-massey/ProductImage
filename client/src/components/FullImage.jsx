@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FullImage = ({src, fullHover}) => {
+const FullImage = ({src, fullHover, clickIt}) => {
 
   return (
     <>
@@ -9,6 +9,7 @@ const FullImage = ({src, fullHover}) => {
         src={src} 
         onMouseEnter={fullHover}
         onMouseLeave={fullHover}
+        onClick={clickIt}
         />
     </>
   );

@@ -14,11 +14,12 @@ class App extends React.Component {
       productId: 2,
       hover: false,
       hoverMain: false,
-      showPopUp: true
+      showPopUp: false
     }
 
     this.hoverChoose = this.hoverChoose.bind(this);
     this.fullHover = this.fullHover.bind(this);
+    this.clickIt = this.clickIt.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +52,10 @@ class App extends React.Component {
 
   clickIt(event) {
     //onclick open gallery view
+    event.preventDefault();
+    this.setState({
+      showPopUp: !this.state.showPopUp
+    })
   }
 
   hoverZoom(event) {
@@ -88,7 +93,7 @@ class App extends React.Component {
             hover={this.state.hover}
             hoverMain={this.state.hoverMain}
             fullHover={this.fullHover}
-
+            clickIt={this.clickIt}
             />
           {
             this.state.showPopUp ? 
