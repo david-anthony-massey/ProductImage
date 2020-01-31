@@ -10,7 +10,11 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
         <div className="thumbnailsDiv">
           {/*map over thumbnails*/
           images.imgUrls.map((url, index)=> {
-            return <Thumbnail key={id,index} i={index} image={url} hoverIt={hoverChoose}/>
+            return <Thumbnail key={id,index} 
+              i={index} 
+              image={url} 
+              hoverChoose={hoverChoose}
+              />
           })
           }
         </div>

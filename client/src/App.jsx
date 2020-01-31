@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import data from './CanadianAPISorryEh.js';
 import Image from './components/Image.jsx';
+import PopUpGallery from './components/PopUpGallery.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends React.Component {
       productUrls: [],
       productId: 2,
       hover: false,
-      hoverMain: false
+      hoverMain: false,
+      showPopUp: true
     }
 
     this.hoverChoose = this.hoverChoose.bind(this);
@@ -88,6 +90,13 @@ class App extends React.Component {
             fullHover={this.fullHover}
 
             />
+          {
+            this.state.showPopUp ? 
+            <PopUpGallery 
+              images={data[this.state.productId]}
+              />
+            : null
+          }
         </div>
     </div>
     );

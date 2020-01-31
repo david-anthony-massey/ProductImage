@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Thumbnail = ({image, hoverIt, i}) => {
+const Thumbnail = ({image, hoverChoose, i}) => {
 
   return (
     <>
@@ -8,8 +8,8 @@ const Thumbnail = ({image, hoverIt, i}) => {
       <img className="thumbnail" 
         i={i} 
         src={image} 
-        onMouseEnter={hoverIt}
-        onMouseLeave={hoverIt}/>
+        onMouseEnter={hoverChoose}
+        onMouseLeave={hoverChoose}/>
     </>
   );
 };
