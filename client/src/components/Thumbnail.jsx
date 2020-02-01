@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Thumbnail = ({image, hoverChoose, i}) => {
+const Thumbnail = ({image, hoverChoose, i, className}) => {
 
   return (
     <>
-      <br></br>
-      <img className="thumbnail" 
+      <img className={className} 
         i={i} 
         src={image} 
         onMouseEnter={hoverChoose}

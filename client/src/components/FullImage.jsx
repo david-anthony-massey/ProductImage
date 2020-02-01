@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FullImage = ({src, fullHover, clickIt}) => {
+const FullImage = ({src, fullHover, clickIt, className}) => {
 
   return (
     <>
       <img 
-        className="prodImage" 
+        className={className} 
         src={src} 
         onMouseEnter={fullHover}
         onMouseLeave={fullHover}

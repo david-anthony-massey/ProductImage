@@ -1,16 +1,31 @@
 import React from 'react';
+import Thumbnail from "./Thumbnail.jsx";
+import FullImage from "./FullImage.jsx";
 
-const PopUpGallery = ({images}) => {
+const PopUpGallery = ({images, id, currentPhoto}) => {
 
   return (
     <>
       <div className="popup">
         <div className="popupgallery">
+          <h2>{images.productName}</h2>
           <div className="popupthumbnailsDiv">
-            <h1>PopUpGallery</h1>
+            {
+              images.imgUrls.map( (url, index) => {
+                return (
+                  <Thumbnail 
+                    className="popupthumbnail" 
+                    key={index, id} 
+                    image={url} 
+                    width="100px"/>
+                )
+              })
+            }
 
-              <img src={images.imgUrls[0]} width="100px"/>
-
+            <FullImage 
+              className="popupprodImage" 
+              src={currentPhoto ? currentPhoto : images.imgUrls[0]}
+            />
           </div>
         </div>
       </div>

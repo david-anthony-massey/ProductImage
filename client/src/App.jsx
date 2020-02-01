@@ -99,6 +99,8 @@ class App extends React.Component {
             this.state.showPopUp ? 
             <PopUpGallery 
               images={data[this.state.productId]}
+              id={this.state.productId}
+              currentPhoto={this.state.currentPhoto}
               />
             : null
           }

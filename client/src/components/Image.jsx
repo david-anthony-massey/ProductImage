@@ -10,11 +10,13 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
         <div className="thumbnailsDiv">
           {/*map over thumbnails*/
           images.imgUrls.map((url, index)=> {
-            return <Thumbnail key={id,index} 
+            return <Thumbnail
+              className="thumbnail" 
+              key={id,index} 
               i={index} 
               image={url} 
               hoverChoose={hoverChoose}
-              />
+              />;
           })
           }
         </div>
@@ -27,7 +29,9 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
           />
 
       </div>
+      <center>
       {hoverMain ? <><br /><text>Click image to open expanded view</text></> : <><br /><text>Roll over image to zoom in</text></>}
+      </center>
     </div>
   );
 };
