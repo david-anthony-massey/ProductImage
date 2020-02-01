@@ -101,6 +101,7 @@ class App extends React.Component {
               images={data[this.state.productId]}
               id={this.state.productId}
               currentPhoto={this.state.currentPhoto}
+              clickIt={this.clickIt}
               />
             : null
           }

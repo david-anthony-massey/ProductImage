@@ -2,12 +2,13 @@ import React from 'react';
 import Thumbnail from "./Thumbnail.jsx";
 import FullImage from "./FullImage.jsx";
 
-const PopUpGallery = ({images, id, currentPhoto}) => {
+const PopUpGallery = ({images, id, currentPhoto, clickIt}) => {
 
   return (
     <>
       <div className="popup">
         <div className="popupgallery">
+            <button onClick={clickIt}>X</button>
           <h2>{images.productName}</h2>
           <div className="popupthumbnailsDiv">
             {
@@ -26,6 +27,7 @@ const PopUpGallery = ({images, id, currentPhoto}) => {
               className="popupprodImage" 
               src={currentPhoto ? currentPhoto : images.imgUrls[0]}
             />
+
           </div>
         </div>
       </div>
