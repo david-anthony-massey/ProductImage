@@ -11,16 +11,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/images', (req, res) => {
+app.post('/getImages', (req, res) => {
   // console.log(req.body.productId);
   db.getImage(req.body.productId, (err, data) => {
-    if (err) console.error('server get error');
-    res.send(data);
+    if (err) {
+      console.error('server get error');
+    } else {
+      // console.log(data)
+      res.send(data);
+    }
   })
 });
 
 app.post('/images', (req, res) => {
-  db.addTo(req.body.productId, req.body.imgUrls, (err, data) => {
+  db.addTo(req.body.productId, req.body.imgUrls, req.body.productName,  (err, data) => {
     if (err) console.error('server post error');
     res.send(data);
   })

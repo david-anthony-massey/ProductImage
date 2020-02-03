@@ -9,7 +9,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
       <div className="fullImage">
         <div className="thumbnailsDiv">
           {/*map over thumbnails*/
-          images.imgUrls.map((url, index)=> {
+          images.map((url, index)=> {
             return <Thumbnail
               className="thumbnail" 
               key={id,index} 
@@ -23,7 +23,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
 
         <FullImage 
           className="prodImage" 
-          src={currentPhoto ? currentPhoto : images.imgUrls[0]}
+          src={currentPhoto ? currentPhoto : images[0]}
           fullHover={fullHover}
           clickIt={clickIt}
           />

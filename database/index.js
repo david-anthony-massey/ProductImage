@@ -4,17 +4,18 @@ const mysqlConfig = require('./config.js');
 const connection = mysql.createConnection(mysqlConfig);
 
 const getImage = function(prodId, callback) {
-  connection.query(`select imgUrl from imageurls where ProductId = '${prodId}';`, (err, data) => {
+  connection.query(`select imgUrl, productName from imageurls where ProductId = '${prodId}';`, (err, data) => {
     if (err) {
       console.error('database getImage error');
     } else {
+      // console.log(data);
       callback(null, data);
     }
   })
 };
 
-const addTo = function(id, url, callback) {
-  connection.query(`Insert into imageUrls (productId, imgUrl) values ('${id}', '${url}')`, (err, data) => {
+const addTo = function(id, url, name, callback) {
+  connection.query(`Insert into imageUrls (productId, imgUrl, productName) values ('${id}', '${url}', '${name}')`, (err, data) => {
     if (err) {
       console.error('database addTo error');
     } else {

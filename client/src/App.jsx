@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       currentPhoto: '',
       productUrls: [],
-      productId: 2,
+      productId: 3,
+      productName: '',
       hover: false,
       hoverMain: false,
       showPopUp: false
@@ -24,11 +25,22 @@ class App extends React.Component {
 
   componentDidMount() {
     //get request for the photo
+    var getObj = {
+      productId: this.state.productId
+    }
 
-    axios.get('http://localhost:3000/images')
+    axios.post('http://localhost:3000/getImages', getObj)
     .then((response) => {
+      // console.log('get images-->', response.data)
+      response.data.map( (url) => {
+        this.setState({
+          productUrls: [...this.state.productUrls, url.imgUrl],
+          productName:url.productName
+        })
+      });
+      
       this.setState({
-        currentPhoto: response.data.imgUrl
+        currentPhoto: this.state.productUrls[0],
       })
     })
     .catch((err) => {console.error('no soup for you')});
@@ -68,12 +80,12 @@ class App extends React.Component {
   //   // console.log('data: ', data);
   //   for (var i = 0; i < data.length; i++) {
   //     for (var j = 0; j < data[i].imgUrls.length; j++) {
-  //         var obj = {
+  //         var postObj = {
   //           productId: data[i].productId,
-  //           imgUrls: data[i].imgUrls[j].toString()
+  //           imgUrls: data[i].imgUrls[j].toString(),
+  //           productName: data[i].productName
   //         }
-
-  //       axios.post('http://localhost:3000/images', obj)
+  //       axios.post('http://localhost:3000/images', postObj)
   //       .then((response) => {
   //         console.log('post response:', response);
   //       })
@@ -87,7 +99,7 @@ class App extends React.Component {
       <div>
         <div className="prodImg">
           <Image 
-            images={data[this.state.productId]} 
+            images={this.state.productUrls} 
             id={this.state.productId}
             currentPhoto={this.state.currentPhoto}
             hoverChoose={this.hoverChoose}
@@ -99,15 +111,16 @@ class App extends React.Component {
           {
             this.state.showPopUp ? 
             <PopUpGallery 
-              images={data[this.state.productId]}
+              images={this.state.productUrls}
               id={this.state.productId}
               currentPhoto={this.state.currentPhoto}
               clickIt={this.clickIt}
+              prodName={this.state.productName}
               />
             : null
           }
         </div>
-
+          <button onClick={this.postIt}>seed</button>
     </div>
     );
   }

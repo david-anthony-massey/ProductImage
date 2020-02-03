@@ -7,7 +7,8 @@ USE FECImages;
 CREATE TABLE ImageUrls (
   id int auto_increment primary key,
   ProductId integer(10),
-  imgUrl text
+  imgUrl text,
+  productName text
 );
 
 /*  Execute this file from the command line by typing:
