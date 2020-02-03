@@ -57,7 +57,7 @@ h4 {
 }
 
 .popupMain {
-  display: flex;
+  display: inline-block;
   position: absolute;
   align-content: left;
 }
@@ -85,14 +85,15 @@ h4 {
 }
 .popupthumbnailsDiv {
   float: right;
-  position: relative;
+  position: absolute;
   width: 50%;
+  right: 30%;
   padding: 20px;
   margin-top: 15px;
   z-index: 1;
 }
 .popupthumbnail {
-  left: 75%;
+  left: 60%;
   float: right;
   position: relative;
   border-width: 2px;

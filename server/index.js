@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/images', (req, res) => {
+  // console.log(req.body.productId);
   db.getImage(req.body.productId, (err, data) => {
     if (err) console.error('server get error');
     res.send(data);

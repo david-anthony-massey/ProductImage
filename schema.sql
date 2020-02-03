@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS FECImages;
 USE FECImages;
 
 CREATE TABLE ImageUrls (
-  id int primary key auto_increment not null,
+  id int auto_increment primary key,
   ProductId integer(10),
   imgUrl text
 );
@@ -21,4 +21,3 @@ CREATE TABLE ImageUrls (
  *  a password, it'll be
  *    mysql -u root < schema.sql
 */
-

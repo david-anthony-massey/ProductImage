@@ -24,7 +24,8 @@ class App extends React.Component {
 
   componentDidMount() {
     //get request for the photo
-    axios.get('http://localhost:3000/images', this.state.productId)
+
+    axios.get('http://localhost:3000/images')
     .then((response) => {
       this.setState({
         currentPhoto: response.data.imgUrl
@@ -106,6 +107,7 @@ class App extends React.Component {
             : null
           }
         </div>
+
     </div>
     );
   }
