@@ -119,7 +119,6 @@ class App extends React.Component {
             : null
           }
         </div>
-        test
     </div>
     );
   }
