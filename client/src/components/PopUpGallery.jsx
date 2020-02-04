@@ -2,13 +2,13 @@ import React from 'react';
 import Thumbnail from "./Thumbnail.jsx";
 import FullImage from "./FullImage.jsx";
 
-const PopUpGallery = ({images, id, currentPhoto, clickIt, prodName}) => {
+const PopUpGallery = ({images, id, currentPhoto, togglePopUp, prodName, clickChoose}) => {
 
   return (
     <>
       <div className="popup">
         <div className="popupgallery">
-          <button onClick={clickIt}>X</button>
+          <button onClick={togglePopUp}>X</button>
           <h4>{prodName}</h4>
           <br></br>
           <div className="popupMain">
@@ -25,7 +25,8 @@ const PopUpGallery = ({images, id, currentPhoto, clickIt, prodName}) => {
                     className="popupthumbnail" 
                     key={index+id} 
                     image={url} 
-                    width="100px"/>
+                    width="100px"
+                    clickChoose={clickChoose}/>
                 )
               })
             }

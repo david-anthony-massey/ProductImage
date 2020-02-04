@@ -2,7 +2,7 @@ import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
 import FullImage from './FullImage.jsx';
 
-const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMain, clickIt}) => {
+const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMain, togglePopUp}) => {
 
   return (
     <div className="prodImage">
@@ -25,7 +25,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
           className="prodImage" 
           src={currentPhoto ? currentPhoto : images[0]}
           fullHover={fullHover}
-          clickIt={clickIt}
+          clickIt={togglePopUp}
           />
 
       </div>

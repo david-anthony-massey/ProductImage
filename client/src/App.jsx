@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import data from './CanadianAPISorryEh.js';
+// import data from './CanadianAPISorryEh.js';
 import Image from './components/Image.jsx';
 import PopUpGallery from './components/PopUpGallery.jsx';
 
@@ -20,7 +20,8 @@ class App extends React.Component {
 
     this.hoverChoose = this.hoverChoose.bind(this);
     this.fullHover = this.fullHover.bind(this);
-    this.clickIt = this.clickIt.bind(this);
+    this.togglePopUp = this.togglePopUp.bind(this);
+    this.clickChoose = this.clickChoose.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +55,14 @@ class App extends React.Component {
     })
   }
 
+  clickChoose(event) {
+    //onClick choose current image to show
+    event.preventDefault();
+    this.setState({
+      currentPhoto: event.target.src
+    })
+  }
+
   fullHover(event) {
     //onHover change text beneath full image
     event.preventDefault();
@@ -62,7 +71,7 @@ class App extends React.Component {
     })
   }
 
-  clickIt(event) {
+  togglePopUp(event) {
     //onclick open gallery view
     event.preventDefault();
     this.setState({
@@ -73,25 +82,6 @@ class App extends React.Component {
   hoverZoom(event) {
     //onHover zoom into image
   }
-
-  //commented out, posts data from CanadianAPI into my database
-  // postIt() {
-  //   // console.log('data: ', data);
-  //   for (var i = 0; i < data.length; i++) {
-  //     for (var j = 0; j < data[i].imgUrls.length; j++) {
-  //         var postObj = {
-  //           productId: data[i].productId,
-  //           imgUrls: data[i].imgUrls[j].toString(),
-  //           productName: data[i].productName
-  //         }
-  //       axios.post('http://localhost:3000/images', postObj)
-  //       .then((response) => {
-  //         console.log('post response:', response);
-  //       })
-  //       .catch((err) => { console.error('cant post wont post'); })
-  //     }
-  //   }
-  // }
 
   render() {
     return (
@@ -105,7 +95,7 @@ class App extends React.Component {
             hover={this.state.hover}
             hoverMain={this.state.hoverMain}
             fullHover={this.fullHover}
-            clickIt={this.clickIt}
+            togglePopUp={this.togglePopUp}
             />
           {
             this.state.showPopUp ? 
@@ -113,8 +103,9 @@ class App extends React.Component {
               images={this.state.productUrls}
               id={this.state.productId}
               currentPhoto={this.state.currentPhoto}
-              clickIt={this.clickIt}
+              togglePopUp={this.togglePopUp}
               prodName={this.state.productName}
+              clickChoose={this.clickChoose}
               />
             : null
           }
