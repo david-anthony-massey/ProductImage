@@ -79,7 +79,7 @@ h4 {
   right: 5%;  
   top: 10%;  
   bottom: 5%;  
-  margin: auto;  
+  /* margin: auto;   */
   max-height: 540px;
   border-radius: 3px;  
   background: white;
