@@ -25,11 +25,10 @@ class App extends React.Component {
 
   componentDidMount() {
     //get request for the photo
-    var getObj = {
-      productId: this.state.productId
-    }
-
-    axios.post('http://localhost:3000/getImages', getObj)
+    axios.get('/getImages', {
+      params: 
+      {productId: this.state.productId}
+    })
     .then((response) => {
       // console.log('get images-->', response.data)
       response.data.map( (url) => {
@@ -120,7 +119,6 @@ class App extends React.Component {
             : null
           }
         </div>
-          <button onClick={this.postIt}>seed</button>
     </div>
     );
   }

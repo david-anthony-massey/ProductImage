@@ -4,9 +4,9 @@ const mysqlConfig = require('./config.js');
 const connection = mysql.createConnection(mysqlConfig);
 
 const getImage = function(prodId, callback) {
-  connection.query(`select imgUrl, productName from imageurls where ProductId = '${prodId}';`, (err, data) => {
+  connection.query(`select imgUrl, productName from ImageUrls where ProductId = '${prodId}';`, (err, data) => {
     if (err) {
-      console.error('database getImage error');
+      throw err;
     } else {
       // console.log(data);
       callback(null, data);
