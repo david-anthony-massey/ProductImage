@@ -1,11 +1,10 @@
-body {
+.tay-prodImg {
   font-family: "Amazon Ember", Arial, sans-serif;
   font-size: 13px;
   color: #525252;
-  align-content: center;
 }
 
-h4 {
+h4, #tay-ProdName {
   font-weight: normal;
   font-size: 18px;
   color: black;
@@ -14,13 +13,13 @@ h4 {
   z-index: 2;
 }
 
-.thumbnailsDiv {
+.tay-thumbnailsDiv {
   width: 15%;
   align-content: left;
   margin-right: 10px;
   margin-left: 5px;
 }
-.thumbnail {
+.tay-thumbnail {
   border-width: 1px;
   border-color: lightgrey;
   border-style: solid;
@@ -30,7 +29,7 @@ h4 {
   object-fit: contain;
 }
 
-.thumbnail:hover {
+.tay-thumbnail:hover {
   border-width: 1px;
   border-color: #e77502b9;
   border-style: solid;
@@ -38,7 +37,7 @@ h4 {
   box-shadow: 0px 0px 5px #e77502;
 }
 
-.fullImage {
+.tay-fullImage {
   display: flex;
   align-content: right;
   overflow: hidden;
@@ -46,7 +45,7 @@ h4 {
   height: 296px;
 }
 
-.prodImage {
+.tay-prodImage {
   display: flex;
   align-content: right;
   flex-flow: column nowrap;
@@ -56,13 +55,13 @@ h4 {
   object-fit: contain;
 }
 
-.popupMain {
+.tay-popupMain {
   display: inline-block;
   position: absolute;
   align-content: left;
 }
 
-.popup {
+.tay-popup {
   position: fixed;  
   width: 100%;  
   height: 100%;  
@@ -73,18 +72,18 @@ h4 {
   margin: auto;  
   background-color: rgba(0,0,0, 0.5); 
 }
-.popupgallery {
+.tay-popupgallery {
   position: absolute;  
   left: 5%;  
   right: 5%;  
   top: 10%;  
   bottom: 5%;  
   /* margin: auto;   */
-  max-height: 540px;
+  max-height: 700px;
   border-radius: 3px;  
   background: white;
 }
-.popupthumbnailsDiv {
+.tay-popupthumbnailsDiv {
   float: right;
   position: absolute;
   width: 50%;
@@ -93,7 +92,7 @@ h4 {
   margin-top: 15px;
   z-index: 1;
 }
-.popupthumbnail {
+.tay-popupthumbnail {
   left: 60%;
   float: right;
   position: relative;
@@ -107,28 +106,28 @@ h4 {
   height: 40px;
   object-fit: contain;
 }
-.popupthumbnail:hover {
+.tay-popupthumbnail:hover {
   border-width: 2px;
   border-color: navy;
   border-style: solid;
   border-radius: 2px;
   /* box-shadow: 0px 0px 5px #e77502; */
 }
-.popupselectedthumbnail {
+.tay-popupselectedthumbnail {
   border-color:#e77502b9;
   border-style: solid;
   border-radius: 3px;
   border-width: 1px;
 }
 
-.popupprodImage {
+.tay-popupprodimage {
   width: 90%;
   max-width: 623px;
-  max-height: 509px;
+  max-height: 650px;
   object-fit: contain;
 }
 
-button {
+button, .tay-close {
   border: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   position:relative;

@@ -86,7 +86,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="prodImg">
+        <div className="tay-prodImg">
           <Image 
             images={this.state.productUrls} 
             id={this.state.productId}

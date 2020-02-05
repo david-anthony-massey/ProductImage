@@ -5,13 +5,13 @@ import FullImage from './FullImage.jsx';
 const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMain, togglePopUp}) => {
 
   return (
-    <div className="prodImage">
-      <div className="fullImage">
-        <div className="thumbnailsDiv">
+    <div className="tay-prodImage">
+      <div className="tay-fullImage">
+        <div className="tay-thumbnailsDiv">
           {/*map over thumbnails*/
           images.map((url, index)=> {
             return <Thumbnail
-              className="thumbnail" 
+              className="tay-thumbnail" 
               key={id,index} 
               i={index} 
               image={url} 
@@ -22,7 +22,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
         </div>
 
         <FullImage 
-          className="prodImage" 
+          className="tay-prodImage" 
           src={currentPhoto ? currentPhoto : images[0]}
           fullHover={fullHover}
           clickIt={togglePopUp}

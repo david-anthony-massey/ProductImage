@@ -6,23 +6,23 @@ const PopUpGallery = ({images, id, currentPhoto, togglePopUp, prodName, clickCho
 
   return (
     <>
-      <div className="popup">
-        <div className="popupgallery">
-          <button onClick={togglePopUp}>X</button>
-          <h4>{prodName}</h4>
+      <div className="tay-popup">
+        <div className="tay-popupgallery">
+          <button className="tay-close" onClick={togglePopUp}>X</button>
+          <h4 id="tay-ProdName">{prodName}</h4>
           <br></br>
-          <div className="popupMain">
+          <div className="tay-popupMain">
             <FullImage 
-              className="popupprodImage" 
+              className="tay-popupprodimage" 
               src={currentPhoto ? currentPhoto : images[0]}
             />
           </div>
-          <div className="popupthumbnailsDiv">
+          <div className="tay-popupthumbnailsDiv">
             {
               images.map( (url, index) => {
                 return (
                   <Thumbnail 
-                    className="popupthumbnail" 
+                    className="tay-popupthumbnail" 
                     key={index+id} 
                     image={url} 
                     width="100px"
