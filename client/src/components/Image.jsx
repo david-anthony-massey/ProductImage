@@ -20,14 +20,12 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
           })
           }
         </div>
-
         <FullImage 
           className="tay-prodImage" 
           src={currentPhoto ? currentPhoto : images[0]}
           fullHover={fullHover}
           clickIt={togglePopUp}
           />
-
       </div>
       <center>
       {hoverMain ? <><br /><text>Click image to open expanded view</text></> : <><br /><text>Roll over image to zoom in</text></>}
