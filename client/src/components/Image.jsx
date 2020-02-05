@@ -36,4 +36,6 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
   );
 };
 
+
+
 export default Image;
