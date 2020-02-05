@@ -30,7 +30,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
 
       </div>
       <center>
-      {hoverMain ? <><br />Click image to open expanded view</> : <><br />Roll over image to zoom in</>}
+      {hoverMain ? <><br /><text>Click image to open expanded view</text></> : <><br /><text>Roll over image to zoom in</text></>}
       </center>
     </div>
   );
