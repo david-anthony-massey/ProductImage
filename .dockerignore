@@ -2,4 +2,3 @@ node_modules
 .DS_store
 .env
 database/config.js
-config.js
