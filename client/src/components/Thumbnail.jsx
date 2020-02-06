@@ -5,6 +5,7 @@ const Thumbnail = ({id, image, hoverChoose, i, className, clickChoose}) => {
   return (
     <>
       <img 
+        data-id={id}
         id={id}
         className={className} 
         i={i} 
