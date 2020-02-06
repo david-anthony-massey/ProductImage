@@ -11,7 +11,6 @@ const PopUpGallery = ({images, id, currentPhoto, togglePopUp, prodName, clickCho
         <h4 className="tay-ProdName">{prodName}</h4><br />
         <div className="tay-popupMain">
           <FullImage 
-            data-id={id}
             id={id}
             className="tay-popupprodimage" 
             src={currentPhoto ? currentPhoto : images[0]}
@@ -21,7 +20,6 @@ const PopUpGallery = ({images, id, currentPhoto, togglePopUp, prodName, clickCho
           {images.map( (url, index) => {
             return (
               <Thumbnail 
-                data-id={id}
                 id={id}
                 className="tay-popupthumbnail" 
                 key={index+id} 

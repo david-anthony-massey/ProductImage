@@ -89,7 +89,6 @@ class App extends React.Component {
       <div className="tay-prodImg">
         <Image 
           images={this.state.productUrls} 
-          data-id={this.state.productId}
           id={this.state.productId}
           currentPhoto={this.state.currentPhoto}
           hoverChoose={this.hoverChoose}
@@ -101,7 +100,6 @@ class App extends React.Component {
         {this.state.showPopUp ? 
           <PopUpGallery 
             images={this.state.productUrls}
-            data-id={this.state.productId}
             id={this.state.productId}
             currentPhoto={this.state.currentPhoto}
             togglePopUp={this.togglePopUp}
