@@ -4,13 +4,13 @@
   color: #525252;
 }
 
-h4, .tay-ProdName {
+.tay-ProdName {
   font-weight: normal;
   font-size: 18px;
   color: black;
   float: right;
   position: relative;
-  z-index: 124;
+  z-index: 2;
 }
 
 .tay-thumbnailsDiv {
@@ -71,7 +71,6 @@ h4, .tay-ProdName {
   bottom: 0;  
   margin: auto;  
   background-color: rgba(0,0,0, 0.5); 
-  z-index: 123;
 }
 .tay-popupgallery {
   position: absolute;  
@@ -91,7 +90,7 @@ h4, .tay-ProdName {
   right: 30%;
   padding: 20px;
   margin-top: 15px;
-  z-index: 124;
+  z-index: 1;
 }
 .tay-popupthumbnail {
   left: 60%;
