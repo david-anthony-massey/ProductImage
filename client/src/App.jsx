@@ -1,6 +1,7 @@
+//Libraries:
 import React from 'react';
 import axios from 'axios';
-// import data from './CanadianAPISorryEh.js';
+//Components:
 import Image from './components/Image.jsx';
 import PopUpGallery from './components/PopUpGallery.jsx';
 
@@ -25,20 +26,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    //get request for the photo
+    //get request sends productId and sets state with response urls/product name
     axios.get('/getImages', {
       params: 
       {productId: this.state.productId}
     })
     .then((response) => {
-      // console.log('get images-->', response.data)
+      //maps over urls
       response.data.map( (url) => {
         this.setState({
           productUrls: [...this.state.productUrls, url.imgUrl],
           productName:url.productName
         })
       });
-      
+      //sets current photo to first url
       this.setState({
         currentPhoto: this.state.productUrls[0],
       })
@@ -47,7 +48,7 @@ class App extends React.Component {
   }
 
   hoverChoose(event) {
-    //onHover choose current image to show
+    //Hover over thumbnails to choose current image to show
     event.preventDefault();
     this.setState({
       currentPhoto: event.target.src,
@@ -56,7 +57,7 @@ class App extends React.Component {
   }
 
   clickChoose(event) {
-    //onClick choose current image to show
+    //Click on thumbnail to choose current image in popup
     event.preventDefault();
     this.setState({
       currentPhoto: event.target.src
@@ -64,7 +65,7 @@ class App extends React.Component {
   }
 
   fullHover(event) {
-    //onHover change text beneath full image
+    //Hover over the main image to change the text below it
     event.preventDefault();
     this.setState({
       hoverMain: !this.state.hoverMain
@@ -72,7 +73,7 @@ class App extends React.Component {
   }
 
   togglePopUp(event) {
-    //onclick open gallery view
+    //Click to toggle the popup view
     event.preventDefault();
     this.setState({
       showPopUp: !this.state.showPopUp
@@ -80,39 +81,35 @@ class App extends React.Component {
   }
 
   hoverZoom(event) {
-    //onHover zoom into image
+    //Hover over main image to zoom
   }
 
   render() {
     return (
-      <div>
-        <div className="tay-prodImg">
-          <Image 
-            images={this.state.productUrls} 
+      <div className="tay-prodImg">
+        <Image 
+          images={this.state.productUrls} 
+          id={this.state.productId}
+          currentPhoto={this.state.currentPhoto}
+          hoverChoose={this.hoverChoose}
+          hover={this.state.hover}
+          hoverMain={this.state.hoverMain}
+          fullHover={this.fullHover}
+          togglePopUp={this.togglePopUp}
+        />
+        {this.state.showPopUp ? 
+          <PopUpGallery 
+            images={this.state.productUrls}
             id={this.state.productId}
             currentPhoto={this.state.currentPhoto}
-            hoverChoose={this.hoverChoose}
-            hover={this.state.hover}
-            hoverMain={this.state.hoverMain}
-            fullHover={this.fullHover}
             togglePopUp={this.togglePopUp}
-            />
-          {
-            this.state.showPopUp ? 
-            <PopUpGallery 
-              images={this.state.productUrls}
-              id={this.state.productId}
-              currentPhoto={this.state.currentPhoto}
-              togglePopUp={this.togglePopUp}
-              prodName={this.state.productName}
-              clickChoose={this.clickChoose}
-              />
-            : null
-          }
-        </div>
-    </div>
+            prodName={this.state.productName}
+            clickChoose={this.clickChoose}
+          /> : null }
+      </div>
     );
   }
+
 };
 
 export default App;
