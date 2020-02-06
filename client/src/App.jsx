@@ -27,7 +27,7 @@ class App extends React.Component {
 
   componentDidMount() {
     //get request sends productId and sets state with response urls/product name
-    axios.get('/getImages', {
+    axios.get('http://fecimages-env.pjpdatnnmu.us-east-1.elasticbeanstalk.com/getImages', {
       params: 
       {productId: this.state.productId}
     })
