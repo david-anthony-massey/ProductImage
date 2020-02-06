@@ -80,10 +80,6 @@ class App extends React.Component {
     })
   }
 
-  hoverZoom(event) {
-    //Hover over main image to zoom
-  }
-
   render() {
     return (
       <div className="tay-prodImg">
