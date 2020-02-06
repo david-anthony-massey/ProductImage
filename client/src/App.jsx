@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       currentPhoto: '',
       productUrls: [],
-      productId: 3,
+      productId:3,
       productName: '',
       hover: false,
       hoverMain: false,
