@@ -5,7 +5,7 @@ const FullImage = ({id, src, fullHover, clickIt, className}) => {
   return (
     <>
       <img 
-        id={id}
+        data-id={id}
         className={className} 
         src={src} 
         onMouseEnter={fullHover}

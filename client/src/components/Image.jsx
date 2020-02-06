@@ -12,6 +12,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
             return <Thumbnail
               className="tay-thumbnail" 
               key={id,index} 
+              data-id={id}
               id={id}
               i={index} 
               image={url} 
@@ -20,6 +21,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
           })}
         </div>
         <FullImage 
+          data-id={id}
           id={id}
           className="tay-prodImage" 
           src={currentPhoto ? currentPhoto : images[0]}
