@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Thumbnail = ({image, hoverChoose, i, className, clickChoose}) => {
+const Thumbnail = ({id, image, hoverChoose, i, className, clickChoose}) => {
 
   return (
     <>
       <img 
+        id={id}
         className={className} 
         i={i} 
         src={image} 
