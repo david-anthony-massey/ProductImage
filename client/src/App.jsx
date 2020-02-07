@@ -45,6 +45,14 @@ class App extends React.Component {
       })
     })
     .catch((err) => {console.error('no soup for you')});
+
+    window.addEventListener('click', (event) => {
+      if (event.target.getAttribute('data-id')) {
+          this.setState({ productId: event.target.getAttribute('data-id') }, () => {
+
+        });
+      }
+    });
   }
 
   hoverChoose(event) {
