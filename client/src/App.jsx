@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       currentPhoto: '',
       productUrls: [],
-      productId:1,
+      productId: 1,
       productName: '',
       hover: false,
       hoverMain: false,
@@ -26,38 +26,41 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.getRequest();
     window.addEventListener('click', (event) => {
       if (event.target.getAttribute('data-id') && event.target.getAttribute('data-id') !== this.state.productId && !isNaN(event.target.getAttribute('data-id'))) {
         this.setState({productId: event.target.getAttribute('data-id') }, () => {
-          
-          //get request sends productId and sets state with response urls/product name
-          axios.get('http://fecimages-env.pjpdatnnmu.us-east-1.elasticbeanstalk.com/getImages', {
-            params: 
-            {productId: this.state.productId}
-          })
-          .then((response) => {
-            //clears product urls
-            this.setState({
-              productUrls: []
-            })
-            //maps over urls
-            response.data.map( (url) => {
-              this.setState({
-                productUrls: [...this.state.productUrls, url.imgUrl],
-                productName:url.productName
-              })
-            });
-            //sets current photo to first url
-            this.setState({
-              currentPhoto: this.state.productUrls[0],
-            })
-          })
-          .catch((err) => {console.error('no soup for you')});
-          
+          this.getRequest();
         });
       }
     });
 
+  }
+
+  getRequest(){
+    //get request sends productId and sets state with response urls/product name
+    axios.get('http://fecimages-env.pjpdatnnmu.us-east-1.elasticbeanstalk.com/getImages', {
+      params: 
+      { productId: this.state.productId }
+    })
+    .then((response) => {
+      //clears product urls
+      this.setState({
+        productUrls: []
+      })
+      //maps over urls
+      response.data.map( (url) => {
+        this.setState({
+          productUrls: [...this.state.productUrls, url.imgUrl],
+          productName:url.productName
+        })
+      });
+      //sets current photo to first url
+      this.setState({
+        currentPhoto: this.state.productUrls[0],
+      })
+    })
+    .catch((err) => {console.error('no soup for you')});
   }
 
   hoverChoose(event) {
