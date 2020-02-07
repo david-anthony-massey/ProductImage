@@ -26,6 +26,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('click', (event) => {
+      if (event.target.getAttribute('data-id') && event.target.getAttribute('data-id') !== this.state.productId && !isNaN(event.target.getAttribute('data-id'))) {
+        this.setState({
+          productId: event.target.getAttribute('data-id') 
+        });
+      }
+    });
+
     //get request sends productId and sets state with response urls/product name
     axios.get('http://fecimages-env.pjpdatnnmu.us-east-1.elasticbeanstalk.com/getImages', {
       params: 
@@ -45,14 +53,6 @@ class App extends React.Component {
       })
     })
     .catch((err) => {console.error('no soup for you')});
-
-    window.addEventListener('click', (event) => {
-      if (event.target.getAttribute('data-id') && event.target.getAttribute('data-id') !== this.state.productId && !isNaN(event.target.getAttribute('data-id'))) {
-        this.setState({productId: event.target.getAttribute('data-id') }, () => {
-          // ***insert your code here for what happen when you change productId in State***
-        });
-      }
-    });
   }
 
   hoverChoose(event) {
