@@ -20,6 +20,7 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
                 />;
             })}
           </div>
+          
           <FullImage 
             id={id}
             className="tay-prodImage" 
