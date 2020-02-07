@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       currentPhoto: '',
       productUrls: [],
-      productId:3,
+      productId:1,
       productName: '',
       hover: false,
       hoverMain: false,
@@ -53,8 +53,6 @@ class App extends React.Component {
             })
           })
           .catch((err) => {console.error('no soup for you')});
-
-
           
         });
       }
