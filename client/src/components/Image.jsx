@@ -5,31 +5,33 @@ import FullImage from './FullImage.jsx';
 const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMain, togglePopUp}) => {
 
   return (
-    <div className="tay-prodImage">
-      <div className="tay-fullImage">
-        <div className="tay-thumbnailsDiv">
-          {images.map((url, index)=> {
-            return <Thumbnail
-              className="tay-thumbnail" 
-              key={id,index} 
-              id={id}
-              i={index} 
-              image={url} 
-              hoverChoose={hoverChoose}
-              />;
-          })}
+    <div className="tay-imageContain">
+      <div className="tay-prodImage">
+        <div className="tay-fullImage">
+          <div className="tay-thumbnailsDiv">
+            {images.map((url, index)=> {
+              return <Thumbnail
+                className="tay-thumbnail" 
+                key={id,index} 
+                id={id}
+                i={index} 
+                image={url} 
+                hoverChoose={hoverChoose}
+                />;
+            })}
+          </div>
+          <FullImage 
+            id={id}
+            className="tay-prodImage" 
+            src={currentPhoto ? currentPhoto : images[0]}
+            fullHover={fullHover}
+            clickIt={togglePopUp}
+            />
         </div>
-        <FullImage 
-          id={id}
-          className="tay-prodImage" 
-          src={currentPhoto ? currentPhoto : images[0]}
-          fullHover={fullHover}
-          clickIt={togglePopUp}
-          />
+        <center>
+        {hoverMain ? <><br />Click image to open expanded view</> : <><br />Roll over image to zoom in</>}
+        </center>
       </div>
-      <center>
-      {hoverMain ? <><br />Click image to open expanded view</> : <><br />Roll over image to zoom in</>}
-      </center>
     </div>
   );
 };
