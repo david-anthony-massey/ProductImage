@@ -59,6 +59,7 @@
   display: inline-block;
   position: absolute;
   align-content: left;
+  z-index: 123;
 }
 
 .tay-popup {
@@ -71,6 +72,7 @@
   bottom: 0;  
   margin: auto;  
   background-color: rgba(0,0,0, 0.5); 
+  z-index: 123;
 }
 .tay-popupgallery {
   position: absolute;  
@@ -78,10 +80,10 @@
   right: 5%;  
   top: 10%;  
   bottom: 5%;  
-  /* margin: auto;   */
   max-height: 700px;
   border-radius: 3px;  
   background: white;
+  
 }
 .tay-popupthumbnailsDiv {
   float: right;

@@ -36,6 +36,10 @@ class App extends React.Component {
             {productId: this.state.productId}
           })
           .then((response) => {
+            //clears product urls
+            this.setState({
+              productUrls: []
+            })
             //maps over urls
             response.data.map( (url) => {
               this.setState({
