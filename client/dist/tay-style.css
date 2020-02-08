@@ -9,7 +9,6 @@
 .tay-prodcontainer {
   width: 700px;
   height: 700px;
-  /* max-height:30%;  */
 }
 
 .tay-ProdName {
@@ -50,14 +49,11 @@
 
 .tay-fullImage {
   display: flex;
-  /* max-width: 100%;
-  max-height: 100%; */
 }
 
 
 .tay-prodImage {
   margin-top: 40px;
-  /* margin-left: 40px; */
   display: flex;
   flex-flow: column nowrap;
   min-width: 50%;
@@ -72,6 +68,7 @@
 .tay-popupMain {
   display: flex;
   position: absolute;
+  /* align-content: 50%; */
   z-index: 123;
 }
 
@@ -94,7 +91,6 @@
   right: 5%;  
   top: 10%;  
   bottom: 5%;  
-  /* padding: 20px; */
   max-height: 700px;
   border-radius: 3px;  
   background: white;
@@ -132,7 +128,6 @@
   border-color: navy;
   border-style: solid;
   border-radius: 2px;
-  /* box-shadow: 0px 0px 5px #e77502; */
 }
 
 .tay-popupselectedthumbnail {
@@ -143,11 +138,13 @@
 }
 
 .tay-popupprodimage {
+  display: flex;
+  vertical-align: middle;
   align-content: center;
-  align-content: 50%;
-  /* width: 90%; */
-  max-width: 50%;
-  max-height: 40%;
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
 }
 
