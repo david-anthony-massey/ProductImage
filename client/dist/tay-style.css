@@ -70,7 +70,7 @@
 
 /***** pop up modal *****/
 .tay-popupMain {
-  display: flex;
+  /* display: flex; */
   position: absolute;
   /* align-content: 50%; */
   z-index: 123;
@@ -95,7 +95,7 @@
   right: 5%;  
   top: 10%;  
   bottom: 5%;  
-  max-height: 700px;
+  max-height: 80vh;
   border-radius: 3px;  
   background: white;
 }
@@ -142,13 +142,14 @@
 } */
 
 .tay-popupprodimage {
+  margin-top: 50px;
+  margin-left: 15%;
   display: flex;
-  vertical-align: middle;
-  align-content: center;
+  flex-flow: column nowrap;
   min-width: 50%;
   min-height: 50%;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 75%;
+  max-height: 70vh;
   object-fit: contain;
 }
 
