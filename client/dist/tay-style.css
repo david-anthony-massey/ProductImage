@@ -7,7 +7,9 @@
 }
 
 .tay-prodcontainer {
-  
+  width: 700px;
+  height: 700px;
+  /* max-height:30%;  */
 }
 
 .tay-ProdName {
@@ -22,7 +24,7 @@
 }
 
 .tay-thumbnailsDiv {
-  width: 15%;
+  width: 10%;
   align-content: left;
   margin-right: 10px;
   margin-left: 5px;
