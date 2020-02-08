@@ -5,7 +5,7 @@ import FullImage from './FullImage.jsx';
 const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMain, togglePopUp}) => {
 
   return (
-    <div className="tay-imageContain">
+    <>
       <div className="tay-prodImage">
         <div className="tay-fullImage">
           <div className="tay-thumbnailsDiv">
@@ -20,7 +20,6 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
                 />;
             })}
           </div>
-          
           <FullImage 
             id={id}
             className="tay-prodImage" 
@@ -29,11 +28,13 @@ const Image = ({images, currentPhoto, id, hoverChoose, hover, fullHover, hoverMa
             clickIt={togglePopUp}
             />
         </div>
-        <center>
-        {hoverMain ? <><br />Click image to open expanded view</> : <><br />Roll over image to zoom in</>}
-        </center>
       </div>
-    </div>
+      <div className="tay-hoverText">
+
+        {hoverMain ? <><br />Click image to open expanded view</> : <><br />Roll over image to zoom in</>}
+
+      </div>
+    </>
   );
 };
 

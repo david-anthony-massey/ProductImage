@@ -7,8 +7,13 @@
 }
 
 .tay-prodcontainer {
-  width: 700px;
-  height: 700px;
+  display: flex;
+  width: 70vw;
+  height: 70vh;
+}
+
+.tay-hoverText {
+  margin-left: 15vmax;
 }
 
 .tay-ProdName {
@@ -23,7 +28,7 @@
 }
 
 .tay-thumbnailsDiv {
-  width: 10%;
+  width: 50px;
   align-content: left;
   margin-right: 10px;
   margin-left: 5px;
@@ -87,7 +92,7 @@
 }
 
 .tay-popupgallery {
-  position: absolute;  
+  position: absolute; 
   left: 5%;  
   right: 5%;  
   top: 10%;  
@@ -131,12 +136,12 @@
   border-radius: 2px;
 }
 
-.tay-popupselectedthumbnail {
+/* .tay-popupselectedthumbnail {
   border-color:#e77502b9;
   border-style: solid;
   border-radius: 3px;
   border-width: 1px;
-}
+} */
 
 .tay-popupprodimage {
   display: flex;
