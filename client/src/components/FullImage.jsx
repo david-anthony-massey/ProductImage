@@ -3,7 +3,7 @@ import React from 'react';
 const FullImage = ({id, src, fullHover, clickIt, className}) => {
 
   return (
-    <>
+    <div className="tay-prodcontainer">
       <img 
         id={id}
         className={className} 
@@ -12,7 +12,7 @@ const FullImage = ({id, src, fullHover, clickIt, className}) => {
         onMouseLeave={fullHover}
         onClick={clickIt}
         />
-    </>
+    </div>
   );
 };
 
