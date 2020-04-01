@@ -11,10 +11,10 @@
   "author": "Tay Huval",
   "license": "",
   "devDependencies": {
-    "cors": "^2.8.5",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
