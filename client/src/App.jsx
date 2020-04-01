@@ -46,7 +46,7 @@ class App extends React.Component {
   getRequest() {
     //get request sends productId and sets state with response urls/product name
     axios
-      .get("https://saskatchewanazon-reviews.herokuapp.com/getImages", {
+      .get("https://saskatchewanazon-productimage.herokuapp.com/getImages", {
         params: { productId: this.state.productId }
       })
       .then(response => {
