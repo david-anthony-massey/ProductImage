@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `FECImages` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `FECImages`;
+CREATE DATABASE  IF NOT EXISTS `canadaamazon` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `canadaamazon`;
 -- MySQL dump 10.13  Distrib 8.0.19, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: FECImages

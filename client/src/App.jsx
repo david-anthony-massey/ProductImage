@@ -1,23 +1,23 @@
 //Libraries:
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 //Components:
-import Image from './components/Image.jsx';
-import PopUpGallery from './components/PopUpGallery.jsx';
+import Image from "./components/Image.jsx";
+import PopUpGallery from "./components/PopUpGallery.jsx";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-  
+
     this.state = {
-      currentPhoto: '',
+      currentPhoto: "",
       productUrls: [],
       productId: 3,
-      productName: '',
+      productName: "",
       hover: false,
       hoverMain: false,
       showPopUp: false
-    }
+    };
 
     this.hoverChoose = this.hoverChoose.bind(this);
     this.fullHover = this.fullHover.bind(this);
@@ -27,40 +27,48 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getRequest();
-    window.addEventListener('click', (event) => {
-      if (event.target.getAttribute('data-id') && event.target.getAttribute('data-id') !== this.state.productId && !isNaN(event.target.getAttribute('data-id'))) {
-        this.setState({productId: event.target.getAttribute('data-id') }, () => {
-          this.getRequest();
-        });
+    window.addEventListener("click", event => {
+      if (
+        event.target.getAttribute("data-id") &&
+        event.target.getAttribute("data-id") !== this.state.productId &&
+        !isNaN(event.target.getAttribute("data-id"))
+      ) {
+        this.setState(
+          { productId: event.target.getAttribute("data-id") },
+          () => {
+            this.getRequest();
+          }
+        );
       }
     });
-
   }
 
-  getRequest(){
+  getRequest() {
     //get request sends productId and sets state with response urls/product name
-    axios.get('http://fecimages-env.pjpdatnnmu.us-east-1.elasticbeanstalk.com/getImages', {
-      params: 
-      { productId: this.state.productId }
-    })
-    .then((response) => {
-      //clears product urls
-      this.setState({
-        productUrls: []
+    axios
+      .get("https://saskatchewanazon-reviews.herokuapp.com/getImages", {
+        params: { productId: this.state.productId }
       })
-      //maps over urls
-      response.data.map( (url) => {
+      .then(response => {
+        //clears product urls
         this.setState({
-          productUrls: [...this.state.productUrls, url.imgUrl],
-          productName:url.productName
-        })
-      });
-      //sets current photo to first url
-      this.setState({
-        currentPhoto: this.state.productUrls[0],
+          productUrls: []
+        });
+        //maps over urls
+        response.data.map(url => {
+          this.setState({
+            productUrls: [...this.state.productUrls, url.imgUrl],
+            productName: url.productName
+          });
+        });
+        //sets current photo to first url
+        this.setState({
+          currentPhoto: this.state.productUrls[0]
+        });
       })
-    })
-    .catch((err) => {console.error('no soup for you')});
+      .catch(err => {
+        console.error("no soup for you");
+      });
   }
 
   hoverChoose(event) {
@@ -69,7 +77,7 @@ class App extends React.Component {
     this.setState({
       currentPhoto: event.target.src,
       hover: !this.state.hover
-    })
+    });
   }
 
   clickChoose(event) {
@@ -77,7 +85,7 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({
       currentPhoto: event.target.src
-    })
+    });
   }
 
   fullHover(event) {
@@ -85,7 +93,7 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({
       hoverMain: !this.state.hoverMain
-    })
+    });
   }
 
   togglePopUp(event) {
@@ -93,7 +101,7 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({
       showPopUp: !this.state.showPopUp
-    })
+    });
   }
 
   hoverZoom(event) {
@@ -103,8 +111,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="tay-prodImg">
-        <Image 
-          images={this.state.productUrls} 
+        <Image
+          images={this.state.productUrls}
           id={this.state.productId}
           currentPhoto={this.state.currentPhoto}
           hoverChoose={this.hoverChoose}
@@ -113,19 +121,19 @@ class App extends React.Component {
           fullHover={this.fullHover}
           togglePopUp={this.togglePopUp}
         />
-        {this.state.showPopUp ? 
-          <PopUpGallery 
+        {this.state.showPopUp ? (
+          <PopUpGallery
             images={this.state.productUrls}
             id={this.state.productId}
             currentPhoto={this.state.currentPhoto}
             togglePopUp={this.togglePopUp}
             prodName={this.state.productName}
             clickChoose={this.clickChoose}
-          /> : null }
+          />
+        ) : null}
       </div>
     );
   }
-
-};
+}
 
 export default App;
